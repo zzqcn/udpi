@@ -595,10 +595,10 @@ void
 dpi_flow_offload_mode (u32 hw_if_index, u8 is_ip6, u8 is_enable)
 {
   if (is_ip6)
-    vnet_feature_enable_disable ("ip4-unicast", "dpi6-flow-input",
+    vnet_feature_enable_disable ("ip6-unicast", "dpi6-flow-input",
 				 hw_if_index, is_enable, 0, 0);
   else
-    vnet_feature_enable_disable ("ip6-unicast", "dpi4-flow-input",
+    vnet_feature_enable_disable ("ip4-unicast", "dpi4-flow-input",
 				 hw_if_index, is_enable, 0, 0);
 }
 
