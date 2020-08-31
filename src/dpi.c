@@ -51,7 +51,7 @@ dpi_entry_t *dpi_dbs = NULL;
 dpi_app_match_rule app_match_rules[] = {
   {"www.cisco.com", NULL, "Cisco", DPI_APP_CISCO}
   ,
-  {"*.google.com", NULL, "Google", DPI_APP_GOOGLE}
+  {".google.com", NULL, "Google", DPI_APP_GOOGLE}
   ,
   {"www.bing.com", NULL, "Bing", DPI_APP_BING}
   ,
@@ -63,83 +63,83 @@ dpi_app_match_rule app_match_rules[] = {
   ,
   {"www.intel.com", NULL, "Intel", DPI_APP_INTEL}
   ,
-  {"*.amazon.com", NULL, "Amazon", DPI_APP_AMAZON}
+  {".amazon.com", NULL, "Amazon", DPI_APP_AMAZON}
   ,
-  {"*.amd.com", NULL, "AMD", DPI_APP_AMD}
+  {".amd.com", NULL, "AMD", DPI_APP_AMD}
   ,
-  {"*.baidu.com", NULL, "Baidu", DPI_APP_BAIDU}
+  {".baidu.com", NULL, "Baidu", DPI_APP_BAIDU}
   ,
-  {"*.apple.com", NULL, "Apple", DPI_APP_APPLE}
+  {".apple.com", NULL, "Apple", DPI_APP_APPLE}
   ,
-  {"*.facebook.com", NULL, "Facebook", DPI_APP_FACEBOOK}
+  {".facebook.com", NULL, "Facebook", DPI_APP_FACEBOOK}
   ,
-  {"*.ebay.com", NULL, "Ebay", DPI_APP_EBAY}
+  {".ebay.com", NULL, "Ebay", DPI_APP_EBAY}
   ,
-  {"*.github.com", NULL, "GitHub", DPI_APP_GITHUB}
+  {".github.com", NULL, "GitHub", DPI_APP_GITHUB}
   ,
-  {"*.gmail.com", NULL, "Gmail", DPI_APP_GMAIL}
+  {".gmail.com", NULL, "Gmail", DPI_APP_GMAIL}
   ,
-  {"*.qq.com", NULL, "QQ", DPI_APP_QQ}
+  {".qq.com", NULL, "QQ", DPI_APP_QQ}
   ,
   {"weixin.qq.com", NULL, "Wechat", DPI_APP_WECHAT}
   ,
-  {"*.pinterest.com", NULL, "", DPI_APP_PINTEREST}
+  {".pinterest.com", NULL, "", DPI_APP_PINTEREST}
   ,
-  {"*.lenovo.com", NULL, "Levono", DPI_APP_LENOVO}
+  {".lenovo.com", NULL, "Levono", DPI_APP_LENOVO}
   ,
-  {"*.linkedin.com", NULL, "LinkedIn", DPI_APP_LINKEDIN}
+  {".linkedin.com", NULL, "LinkedIn", DPI_APP_LINKEDIN}
   ,
-  {"*.skype.com", NULL, "Skype", DPI_APP_SKYPE}
+  {".skype.com", NULL, "Skype", DPI_APP_SKYPE}
   ,
-  {"*.microsoft.com", NULL, "Microsoft", DPI_APP_MICROSOFT}
+  {".microsoft.com", NULL, "Microsoft", DPI_APP_MICROSOFT}
   ,
-  {"*.netflix.com", NULL, "Netflix", DPI_APP_NETFLIX}
+  {".netflix.com", NULL, "Netflix", DPI_APP_NETFLIX}
   ,
-  {"*.nokia.com", NULL, "Nokia", DPI_APP_NOKIA}
+  {".nokia.com", NULL, "Nokia", DPI_APP_NOKIA}
   ,
-  {"*.nvidia.com", NULL, "nVIDIA", DPI_APP_NVIDIA}
+  {".nvidia.com", NULL, "nVIDIA", DPI_APP_NVIDIA}
   ,
-  {"*.office365.com", NULL, "Office", DPI_APP_OFFICE}
+  {".office365.com", NULL, "Office", DPI_APP_OFFICE}
   ,
-  {"*.oracle.com", NULL, "Oracle", DPI_APP_ORACLE}
+  {".oracle.com", NULL, "Oracle", DPI_APP_ORACLE}
   ,
-  {"*.Outlook.com", NULL, "Outlook", DPI_APP_OUTLOOK}
+  {".Outlook.com", NULL, "Outlook", DPI_APP_OUTLOOK}
   ,
-  {"*.pandora.com", NULL, "Pandora", DPI_APP_PANDORA}
+  {".pandora.com", NULL, "Pandora", DPI_APP_PANDORA}
   ,
-  {"*.paypal.com", NULL, "Paypal", DPI_APP_PAYPAL}
+  {".paypal.com", NULL, "Paypal", DPI_APP_PAYPAL}
   ,
-  {"*.sina.com", NULL, "Sina", DPI_APP_SINA}
+  {".sina.com", NULL, "Sina", DPI_APP_SINA}
   ,
-  {"*.sogou.com", NULL, "Sogou", DPI_APP_SOGOU}
+  {".sogou.com", NULL, "Sogou", DPI_APP_SOGOU}
   ,
-  {"*.symantec.com", NULL, "Symantec", DPI_APP_SYMANTEC}
+  {".symantec.com", NULL, "Symantec", DPI_APP_SYMANTEC}
   ,
-  {"*.taobao.com", NULL, "Taobao", DPI_APP_TAOBAO}
+  {".taobao.com", NULL, "Taobao", DPI_APP_TAOBAO}
   ,
-  {"*.twitter.com", NULL, "Twitter", DPI_APP_TWITTER}
+  {".twitter.com", NULL, "Twitter", DPI_APP_TWITTER}
   ,
-  {"*.ups.com", NULL, "UPS", DPI_APP_UPS}
+  {".ups.com", NULL, "UPS", DPI_APP_UPS}
   ,
-  {"*.visa.com", NULL, "VISA", DPI_APP_VISA}
+  {".visa.com", NULL, "VISA", DPI_APP_VISA}
   ,
-  {"*.mcafee.com", NULL, "Mcafee", DPI_APP_MCAFEE}
+  {".mcafee.com", NULL, "Mcafee", DPI_APP_MCAFEE}
   ,
-  {"*.vmware.com", NULL, "VMWare", DPI_APP_VMWARE}
+  {".vmware.com", NULL, "VMWare", DPI_APP_VMWARE}
   ,
-  {"*.wordpress.com", NULL, "Wordpress", DPI_APP_WORDPRESS}
+  {".wordpress.com", NULL, "Wordpress", DPI_APP_WORDPRESS}
   ,
   {"www.adobe.com", NULL, "Adobe", DPI_APP_ADOBE}
   ,
   {"www.akamai.com", NULL, "Akamai", DPI_APP_AKAMAI}
   ,
-  {"*.alienvault.com", NULL, "Alienvault", DPI_APP_ALIENVAULT}
+  {".alienvault.com", NULL, "Alienvault", DPI_APP_ALIENVAULT}
   ,
   {"www.bitcomet.com", NULL, "Bitcomet", DPI_APP_BITCOMET}
   ,
   {"www.checkpoint.com", NULL, "Checkpoint", DPI_APP_CHECKPOINT}
   ,
-  {"*.bloomberg.com", NULL, "Bloomberg", DPI_APP_BLOOMBERG}
+  {".bloomberg.com", NULL, "Bloomberg", DPI_APP_BLOOMBERG}
   ,
   {"www.dell.com", NULL, "DELL", DPI_APP_DELL}
   ,
@@ -147,7 +147,7 @@ dpi_app_match_rule app_match_rules[] = {
   ,
   {"www.fireeye.com", NULL, "Fireeye", DPI_APP_FIREEYE}
   ,
-  {"*.dropbox.com", NULL, "", DPI_APP_DROPBOX}
+  {".dropbox.com", NULL, "", DPI_APP_DROPBOX}
   ,
 
   {NULL, NULL, NULL, 0}
