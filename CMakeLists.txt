@@ -56,7 +56,7 @@ include_directories(${VPP_INCLUDE_DIR})
 
 set(UDPI_PLUGIN_FILES
     src/dpi.c
-    src/dpi_api.c
+    #src/dpi_api.c
     src/dpi_cli.c
     src/dpi_node.c
     src/protocols/dpi_ssl.c

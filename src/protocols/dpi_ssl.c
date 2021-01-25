@@ -152,6 +152,7 @@ dpi_ssl_detect_protocol_from_cert (u8 * payload, u32 payload_len,
 	  rv = dpi_search_host_protocol (flow, (char *) payload, payload_len,
 					 DPI_PROTOCOL_SSL, &host_protocol);
 
+    printf("host_protocol: %u\n", host_protocol);
 	  if (host_protocol != DPI_PROTOCOL_UNKNOWN)
 	    {
 	      dpi_set_detected_protocol (flow, host_protocol,
@@ -171,6 +172,7 @@ dpi_search_tcp_ssl (u8 * payload, u32 payload_len, dpi_flow_info_t * flow)
   u32 cur_len = payload_len;
   u32 cur_len2;
   u8 handshake_type;
+  u8 *p;
 
   /* Check first segment of SSL Certificate message */
   if ((payload_len > (sizeof (ssl_header) + sizeof (Handshake_header)))
@@ -193,6 +195,18 @@ dpi_search_tcp_ssl (u8 * payload, u32 payload_len, dpi_flow_info_t * flow)
 	      flow->l4.tcp.ssl_stage = State_Server_Hello;
 	      return;
 	    }
+
+    p = payload + 7;
+    cur_len2 = ntohs(get_u16_t(p, 0)) + 4; // server hello length
+    p = payload + sizeof(ssl_header) + cur_len2;
+    if (p[0] == certificate) {
+      flow->l4.tcp.ssl_stage = State_Certificate;
+		  flow->detect_begin = 1;
+		  /* Scan segments of certificate message */
+		  if (dpi_ssl_detect_protocol_from_cert (p+4,
+							 payload_len - (p+4-payload), flow) > 0)
+		    return;
+    }
 
 	  /* This packet contains Server Hello, Certificate and more messages */
 	  if (payload_len >= cur_len + sizeof (ssl_header)
